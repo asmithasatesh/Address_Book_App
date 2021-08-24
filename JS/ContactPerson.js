@@ -53,7 +53,6 @@ class ContactPerson
               throw 'Pincode is Incorrect';
             }
         }
-
     }
 
     get address()

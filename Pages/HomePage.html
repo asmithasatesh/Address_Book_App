@@ -3,11 +3,12 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Person Form</title>
+    <title>Home Page</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1,500&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../StyleSheet/HomeCss.css" />
 </head>
 
@@ -20,5 +21,25 @@
             <span>Book</span>
         </div>
     </div>
+
+    <!-- Usecase 2: Ability to create a Header Section with Employee Details and Add Employee button -->
+    <div class="main-content">
+        <div class="inner-header-content">
+            <div class="emp-detail-text">Person Details
+            </div>
+            <a href="../Pages/AddPersonForm.html" class="add-button">
+                <img src="../Assets/button/add-24px.svg" alt="Add Button">
+                Add User
+            </a>
+        </div>
+        <!--Usecase 3: Ability to view Employee Payroll details in a Tabular Format.-->
+        <div class="table-main">
+            <table class="table" id="display-table">
+            </table>
+        </div>
+    </div>
+    <script src="../JS/ContactPerson.js"></script>
+    <script src="../JS/ContactValidation.js"></script>
+    <script src="../JS/Homepage.js"></script>
 </body>
 </html>
