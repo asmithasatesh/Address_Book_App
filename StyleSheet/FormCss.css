@@ -1,0 +1,32 @@
+/* Usecase 1: Create header */
+.logo-content
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 20%;
+    margin-left: 5%;
+    padding: 15px;
+}
+
+.header-text
+{
+    display: flex;
+    flex-direction: column;
+    font: normal normal bold 22px/25px Montserrat;
+    text-transform: uppercase;
+    margin-left: 3%;
+
+}
+.header-text span:nth-child(2)
+{
+    color: #42515F;
+}
+.header-text span:nth-child(1)
+{
+    color: #008CFF;
+}
+body
+{
+    margin: 0;
+}
