@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Person Form</title>
     <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1,500&display=swap"
-    rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1,500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../StyleSheet/FormCss.css" />
 </head>
+
 <body>
     <!-- Usecase 1: Create header -->
     <div class="logo-content">
@@ -18,5 +20,71 @@
             <span>Book</span>
         </div>
     </div>
+
+    <div class="form-content">
+        <form>
+            <!-- Usecase 2: Create form head and Name -->
+            <header class="form-head">Person Address Form<span><img src="../Assets/button/cancelButton.png" /></span>
+            </header>
+            <div class="row-content">
+                <label for="name" class="label text">Full Name</label>
+                <input type="text" id="name" class="input" placeholder=" Your name ..">
+                <validate class="text-error" for="name"></validate>
+            </div>
+            <div class="row-content">
+                <label for="phone" class="label text">Phone Number</label>
+                <input type="text" id="phone" class="input">
+                <validate class="text-error" for="phone"></validate>
+            </div>
+            <div class="row-content">
+                <label for="Address" class="label text">Address</label>
+                <textarea type="text" id="Address" class="input address"></textarea>
+                <validate class="text-error" for="Address"></validate>
+            </div>
+
+            <!-- Usecase 5: start date with Day, Month and Year as Select Input Item-->
+            <div class="row-content">
+                <div id="citystatezip">
+                    <div class="column">
+                        <label for="Address" class="label text">City</label>
+                        <select name="City" id="City" class="text">
+                            <option>Select City</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Lucknow">Lucknow</option>
+    
+                        </select>
+                    </div>
+   
+                    <div class="column">
+                        <label for="Address" class="label text">State</label>
+                        <select id="State" name="State" class="text">
+                            <option>Select State</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="West Bengal">West Bengal</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+    
+                        </select>
+                    </div>
+                    <div class="column">
+                        <label for="Address" class="label text">Zip Code</label>
+                        <input type="text" id="zip" class="zipcode" placeholder=" Zip Code">
+                    </div>
+
+                </div>
+            </div>
+                <div class="submit-reset buttonparent">
+                    <button type="submit" class="button submitButton" >Add</button>
+                    <button type="reset" class="button">Reset</button>
+                </div>
+        </form>
+    </div>
 </body>
+
 </html>
