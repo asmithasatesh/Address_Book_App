@@ -28,17 +28,17 @@
             </header>
             <div class="row-content">
                 <label for="name" class="label text">Full Name</label>
-                <input type="text" id="name" class="input" placeholder=" Your name ..">
-                <validate class="text-error" for="name"></validate>
+                <input type="text" id="fullName" class="input" placeholder=" Your name ..">
+                <validate class="text-error" for="fullName"></validate>
             </div>
             <div class="row-content">
-                <label for="phone" class="label text">Phone Number</label>
-                <input type="text" id="phone" class="input">
-                <validate class="text-error" for="phone"></validate>
+                <label for="phoneNumber" class="label text">Phone Number</label>
+                <input type="text" id="phoneNumber" class="input">
+                <validate class="text-error-phone" for="phoneNumber"></validate>
             </div>
             <div class="row-content">
                 <label for="Address" class="label text">Address</label>
-                <textarea type="text" id="Address" class="input address"></textarea>
+                <textarea type="text" id="address" class="input address"></textarea>
                 <validate class="text-error" for="Address"></validate>
             </div>
 
@@ -48,7 +48,7 @@
 
                     <div class="column">
                         <label for="Address" class="label text">City</label>
-                        <select name="City" id="City" class="text">
+                        <select name="City" id="city" class="text">
                             <option>Select City</option>
                             <option value="Mumbai">Mumbai</option>
                             <option value="Bangalore">Bangalore</option>
@@ -61,7 +61,7 @@
 
                     <div class="column">
                         <label for="Address" class="label text">State</label>
-                        <select id="State" name="State" class="text">
+                        <select id="State" name="state" class="text">
                             <option>Select State</option>
                             <option value="Maharashtra">Maharashtra</option>
                             <option value="Karnataka">Karnataka</option>
@@ -72,10 +72,10 @@
                         </select>
                     </div>
                     <div class="column">
-                        <label for="Address" class="label text">Zip Code</label>
+                        <label for="zip" class="label text">Zip Code</label>
                         <input type="text" id="zip" class="zipcode" placeholder=" Zip Code">
+                        <validate class="text-error-zip" for="zip"></validate>
                     </div>
-
                 </div>
             </div>
             <div class="submit-reset buttonparent">
@@ -84,6 +84,7 @@
             </div>
         </form>
     </div>
+    <script src="../JS/ContactPerson.js"></script>
+    <script src="../JS/ContactValidation.js"></script>
 </body>
-
 </html>
