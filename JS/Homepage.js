@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', (event) =>
 
 });
 
-//Usecase 6: Ability to view Employee Payroll details from Local Storage.
+//Usecase 7: Ability to view Employee Payroll details from Local Storage.
 InjectFRomLOcalStorage = () => {
     const headerHtml = "<th>FullName</th><th>Address</th><th>City</th><th>State</th><th>Zip Code</th><th>Phone Number</th><th></th>";
     let innerHtml = `${headerHtml}`;
@@ -23,7 +23,7 @@ InjectFRomLOcalStorage = () => {
     <td>${ContactList[i]._zip}</td>
     <td>${ContactList[i]._phoneNumber}</td>
     <td>
-        <img id="${ContactList[i]._fullName}" src="../assets/icons/delete-black-18dp.svg" alt="delete" id="icon"/>
+        <img id="${ContactList[i]._fullName}" src="../assets/icons/delete-black-18dp.svg" onclick="remove(this)" alt="delete" id="icon"/>
         <img id="${ContactList[i]._fullName}" src="../assets/icons/create-black-18dp.svg" alt="create" id="icon"/>
     </td>
   </tr>
@@ -32,8 +32,20 @@ InjectFRomLOcalStorage = () => {
       
     document.querySelector('#display-table').innerHTML = innerHtml;
   }
-  //Usecase 6: Get data from Local Storage
+  //Usecase 7: Get data from Local Storage
   const getEmployeePayrollFromLocalStorage=()=>
   {
       return localStorage.getItem("ContactList") ? JSON.parse(localStorage.getItem("ContactList")) : [];
   }
+
+//Usecase 8: Remove employee from Local Storage
+const remove= (node) =>
+{
+  let employeePayrollData=ContactList.find(empData => empData._fullName == node.id);
+  if(!employeePayrollData) return ;
+  const index= ContactList.map(empData => empData._fullName)
+  .indexOf(employeePayrollData._fullName);
+  ContactList.splice(index,1);
+  localStorage.setItem("ContactList",JSON.stringify(ContactList));
+  InjectFRomLOcalStorage();
+}
