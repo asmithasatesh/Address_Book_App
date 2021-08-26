@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', (event) =>
   //Usecase 6: Ability to view Employee Payroll details from Local Storage.
     ContactList=getEmployeePayrollFromLocalStorage();
     InjectFRomLOcalStorage();
+    localStorage.removeItem("editContact");
 });
 
 //Usecase 7: Ability to view Employee Payroll details from Local Storage.
