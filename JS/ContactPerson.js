@@ -1,6 +1,15 @@
 //Usecase 4: Add getter and setter for all form properties
 class ContactPerson
 {
+    get id()
+    {
+        return this._id;
+    }
+    set id(id)
+    {
+        this._id=id;
+    }
+
     get fullName()
     {
         return this._fullName;
@@ -83,7 +92,7 @@ class ContactPerson
     }
 
     toString(){
-        return "Contact name : "+this.fullname+" || Phone Number: "+this.phoneNumber+" || Address: "+this.address+" || City: "+this.city+" || State: "+this.state+
+        return "Contact name : "+this.fullName+" || Phone Number: "+this.phoneNumber+" || Address: "+this.address+" || city: "+this.city+" || state: "+this.state+
         " || zip: "+this.zip;
     }
 }

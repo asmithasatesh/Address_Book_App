@@ -22,12 +22,12 @@
     </div>
 
     <div class="form-content">
-        <form onsubmit="save()">
+        <form onsubmit="save(event)">
             <!-- Usecase 2: Create form head and Name -->
             <header class="form-head">Person Address Form<a href="../Pages/HomePage.html"><span><img src="../Assets/button/cancelButton.png" class="resetButton"/></span></a>
             </header>
             <div class="row-content">
-                <label for="name" class="label text">Full Name</label>
+                <label for="fullName" class="label text">Full Name</label>
                 <input type="text" id="fullName" class="input" placeholder=" Your name ..">
                 <validate class="text-error" for="fullName"></validate>
             </div>
@@ -47,9 +47,9 @@
                 <div id="citystatezip">
 
                     <div class="column">
-                        <label for="Address" class="label text">City</label>
-                        <select name="City" id="city" class="text">
-                            <option>Select City</option>
+                        <label for="Address" class="label text">city</label>
+                        <select name="city" id="city" class="text">
+                            <option value="Select City">Select city</option>
                             <option value="Mumbai">Mumbai</option>
                             <option value="Bangalore">Bangalore</option>
                             <option value="Kolkata">Kolkata</option>
@@ -60,9 +60,9 @@
                     </div>
 
                     <div class="column">
-                        <label for="State" class="label text">State</label>
-                        <select id="State" name="state" class="text">
-                            <option>Select State</option>
+                        <label for="state" class="label text">state</label>
+                        <select id="state" name="state" class="text">
+                            <option value="Select State">Select state</option>
                             <option value="Maharashtra">Maharashtra</option>
                             <option value="Karnataka">Karnataka</option>
                             <option value="West Bengal">West Bengal</option>
@@ -73,7 +73,7 @@
                     </div>
 
                     <div class="column">
-                        <label for="zip" class="label text">Zip Code</label>
+                        <label for="zip" class="label text" value="Zip Code">Zip Code</label>
                         <input type="text" id="zip" class="zipcode" placeholder=" Zip Code">
                         <validate class="text-error-zip" for="zip"></validate>
                     </div>
