@@ -1,6 +1,6 @@
-   //first loads the contents in the web page then validates
+   //Variable to check whether page is for create or update
    let isUpdate = false;
-let contactObj = {};
+   let contactObj = {};
    window.addEventListener("DOMContentLoaded", (event) => {
 
      //Usecase 4: Check whether contact details is Proper using Regex   
@@ -40,35 +40,39 @@ let contactObj = {};
      checkForUpdate();
     
     });
-      //checks whether the page comes for update
+      
+  //Checks whether updation is needed
   var checkForUpdate=()=>{
     var contactJSON = localStorage.getItem('editContact');
     isUpdate=contactJSON?true:false;
     if(!isUpdate)return;
     contactObj=JSON.parse(contactJSON);
     setForm();
-  }
-  var setValue=(id,value)=>{
-    var element = document.querySelector(id);
-    element.value=value;
-  }
-  //set form for updation
-  var setForm=()=>{
-    setValue('#fullName',contactObj._fullName);
-      setValue('#phoneNumber',contactObj._phoneNumber);
-      setValue('#address',contactObj._address);
-      setValue('#city',contactObj._city);
-      setValue('#state',contactObj._state);
-      setValue('#zip',contactObj._zip);    
-  }
+     }
+    var setValue=(id,value)=>{
+      var element = document.querySelector(id);
+      element.value=value;
+    }
+  //Set Updated values
+    var setForm=()=>{
+      setValue('#fullName',contactObj._fullName);
+        setValue('#phoneNumber',contactObj._phoneNumber);
+        setValue('#address',contactObj._address);
+        setValue('#city',contactObj._city);
+        setValue('#state',contactObj._state);
+        setValue('#zip',contactObj._zip);    
+      }
 
-  var setTextValue = (id, value) => {
+    var setTextValue = (id, value) => {
     var attribute = document.querySelector(id);
     attribute.textContent = value;
-}
+    }
 
-
-  //saves the data to local
+  var getInputValue = (id) => {
+    let value = document.getElementById(id).value;
+    return value;
+  };
+  //Usecase 8-Saves the data to local
   var save = (event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -90,10 +94,10 @@ let contactObj = {};
       contactObj.state = getInputValue("state");
       contactObj.zip = getInputValue("zip");
     }
-  //UC-6 create or update local storage
-  //UC-10 Refactored to create data with ID
+
+  //Usecase 6-create or update local storage
   var createorUpdateLocal = () => {
-      //JSON Object
+
       let addressList = JSON.parse(localStorage.getItem("ContactList"));
       if(addressList){
         let contactData = addressList.find(contact=>contact._id == contactObj._id);
@@ -109,7 +113,8 @@ let contactObj = {};
       //JSON to String
       localStorage.setItem("ContactList", JSON.stringify(addressList));
     };
-    //checks for id
+
+    //Check whether id is present 
     var createNewContact=(id)=>{
       let contactData = new ContactPerson();
       if(!id)contactData.id = createContactId();
@@ -117,7 +122,8 @@ let contactObj = {};
       setContact(contactData);
       return contactData;
     }
-    //allocates ID
+
+    //Create ID
     var createContactId=()=>{
       let contactId = localStorage.getItem("ContactId");
       contactId = !contactId? 1:(parseInt(contactId)+1).toString();
@@ -136,13 +142,8 @@ let contactObj = {};
          alert(e);
      }
     };
-    //gets based on ID
-  var getInputValue = (id) => {
-      let value = document.getElementById(id).value;
-      return value;
-  };
 
-  // UC-7 Reset
+  //Reset form once submitted
   var resetForm=()=>{
       setValue('#fullName','');
       setValue('#phoneNumber','');
